@@ -97,11 +97,11 @@ echo core | sudo tee /proc/sys/kernel/core_pattern
 
 Вот как выглядело окно фаззинга на старте.
 
-\\\\\скрин\\\\\
+![1](images/Screen1.png)
 
 А вот как под конец
 
-\\\\\скрин\\\\\
+![2](images/Screen2.png)
 
 ## 3.Сбор покрытия по результатам фаззинг тестирования
 В заключительной части нам нужно собрать покрытие по результатам фаззинг-тестирования. Я это сделаю 3 способами: через консоль, с помощью llvm, и с помощью lcov.
@@ -143,7 +143,7 @@ llvm-cov show ./qjs -instr-profile=coverage.profdata > coverage.txt
 llvm-cov report ./qjs -instr-profile=coverage.profdata
 ```
 
-\\\\\скрин\\\\\
+![3](images/Screen3.png)
 
 Cгенерируем HTML-отчет llvm-покрытия
 ```
@@ -152,7 +152,7 @@ llvm-cov show ./qjs -instr-profile=coverage.profdata \
 xdg-open coverage_report/index.html
 ```
 
-\\\\\скрин\\\\\
+![4](images/Screen4.png)
 
 Также сформируем HTML-отчет lcov-покрытия
 ```
@@ -163,4 +163,4 @@ genhtml coverage.lcov -o coverage_report
 xdg-open coverage_report/index.html
 ```
 
-\\\\\скрин\\\\\
+![5](images/Screen5.png)
