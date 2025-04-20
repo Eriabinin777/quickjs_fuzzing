@@ -156,7 +156,6 @@ xdg-open coverage_report/index.html
 
 Также сформируем HTML-отчет lcov-покрытия
 ```
-
 llvm-cov export ./qjs -instr-profile=coverage.profdata \
     -format=lcov > coverage.lcov
 
